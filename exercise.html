@@ -6,22 +6,25 @@
     <title>exercise</title>
   </head>
   <body>
-    <table border="1" cellpadding="20" cellspacing="0">
-      <!-- Row 1 -->
+    <table
+      border="1"
+      ;
+      cellpadding="20"
+      ;
+      cellspacing="0"
+      ;
+      style="background-image: url(photo2.jpg)"
+    >
       <tr>
         <td rowspan="2">A</td>
         <td>B</td>
         <td colspan="2">C</td>
       </tr>
-
-      <!-- Row 2 -->
       <tr>
         <td rowspan="3">E</td>
         <td>F</td>
         <td rowspan="3">H</td>
       </tr>
-
-      <!-- Row 3 -->
       <tr>
         <td rowspan="2">D</td>
         <td>G</td>
@@ -29,8 +32,31 @@
       <tr>
         <td></td>
       </tr>
-      <!-- Row 4 -->
-      <tr></tr>
     </table>
+    <h2>Forms</h2>
+    <form>
+      <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        contact forms
+      </h3>
+      <hr />
+      <label for="Email">Email:</label>
+      <input type="email" /><br /><br />
+
+      <p>Gender:</p>
+
+      <label for="Male">Male:</label>
+      <input type="radio" id="Male" name="gender" value="Male" /><br /><br />
+
+      <label for="Female">Female:</label>
+      <input type="radio" id="Femal" name="gender" value="Female" /><br /><br />
+    </form>
+    <br /><br />
+    <a href="https://www.w3schools.com">Touche<sup>'</sup></a>
+
+    <h2 style="text-align: initial">I <del>hate</del> love playing chess.</h2>
+    <dl>
+      <dt>HTML</dt>
+      <dd>Hypertext Markup Language</dd>
+    </dl>
   </body>
 </html>
