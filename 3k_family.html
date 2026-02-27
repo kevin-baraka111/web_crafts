@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Family</title>
+    <link rel="stylesheet" href="assets/css/mine.css" />
+  </head>
+  <body>
+    <h2><u>3K Family Generals Qualification</u></h2>
+    <form onsubmit="return checkQualification();">
+      <fieldset id="whole">
+        <legend>Personal Information:</legend>
+        <br />
+        Last Name:
+        <input type="text" id="Lname" placeholder="sir name" /><br /><br />
+        Religion:
+        <select id="religion">
+          <option value="Christian">Christian</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Islam">Muslim</option>
+          <option value="Zoroastrian">Zoroastrian</option>
+          <option value="Buddhist">Buddhist</option></select
+        ><br /><br />
+        Networth:
+        <select id="networth">
+          <option value="2000000">2,000,000</option>
+          <option value="4000000">4,000,000</option>
+          <option value="6000000">6,000,000</option>
+          <option value="12000000">12,000,000</option>
+          <option value="20000000">20,000,000</option></select
+        ><br /><br />
+        Occupation Status:<br /><br />
+        <input type="radio" name="job" value="Working" />Working<br />
+        <input type="radio" name="job" value="Student" />Student<br />
+        <input type="radio" name="job" value="Both" />Both<br />
+        <input type="radio" name="job" value="Idle" />Idle<br />
+
+        <br /><br />
+        Origin:
+        <select id="origin">
+          <option>Kenyan</option>
+          <option>American</option>
+          <option>Ethiopian</option>
+          <option>Rwandan</option>
+          <option>Emirati</option>
+          <option>Israeli</option>
+          <option>Egyptian</option>
+          <option>Tanzanian</option></select
+        ><br /><br /><br />
+        <button type="submit">submit</button>
+        <button type="button" onclick="resetForm()">Try Again</button>
+      </fieldset>
+    </form>
+
+    <h3>Results:</h3>
+    <ul id="feedback"></ul>
+    <p id="finalResult"></p>
+
+    <script>
+      function checkQualification() {
+        let score = 0;
+        let feedback = "";
+
+        let lname = document.getElementById("Lname");
+        let religion = document.getElementById("religion");
+        let networthField = document.getElementById("networth");
+        let occupation = document.querySelector('input[name="job"]:checked');
+
+        // LASTNAME
+        if (lname.value.toLowerCase() === "chege") {
+          score++;
+          lname.classList.add("correct");
+          lname.classList.remove("incorrect");
+          feedback += "<li>✔ Lastname correct</li>";
+        } else {
+          lname.classList.add("incorrect");
+          lname.classList.remove("correct");
+          feedback += "<li>❌ Lastname should be Chege</li>";
+        }
+
+        // RELIGION
+        if (religion.value === "Christian") {
+          score++;
+          religion.classList.add("correct");
+          religion.classList.remove("incorrect");
+          feedback += "<li>✔ Religion correct</li>";
+        } else {
+          religion.classList.add("incorrect");
+          religion.classList.remove("correct");
+          feedback += "<li>❌ Religion must be Christian</li>";
+        }
+
+        // NETWORTH
+        let networth = parseInt(networthField.value);
+        if (networth >= 12000000) {
+          score++;
+          networthField.classList.add("correct");
+          networthField.classList.remove("incorrect");
+          feedback += "<li>✔ Networth sufficient</li>";
+        } else {
+          networthField.classList.add("incorrect");
+          networthField.classList.remove("correct");
+          feedback += "<li>❌ Networth must be 12M+</li>";
+        }
+
+        // OCCUPATION
+        if (occupation && occupation.value !== "Idle") {
+          score++;
+          feedback += "<li>✔ Occupation acceptable</li>";
+        } else {
+          feedback += "<li>❌ Must be Working or Student</li>";
+        }
+
+        // SHOW FEEDBACK
+        document.getElementById("feedback").innerHTML = feedback;
+
+        // FINAL RESULT
+        let final = document.getElementById("finalResult");
+
+        if (score >= 3) {
+          final.innerHTML = "🎖 You are a 3K General! Conditions met: " + score;
+          final.style.color = "green";
+        } else {
+          final.innerHTML = "❌ Not qualified. Conditions met: " + score;
+          final.style.color = "red";
+        }
+
+        return false;
+      }
+      function resetForm() {
+        // Clear text input
+        document.getElementById("Lname").value = "";
+
+        // Reset dropdowns
+        document.getElementById("religion").selectedIndex = 0;
+        document.getElementById("networth").selectedIndex = 0;
+        document.getElementById("origin").selectedIndex = 0;
+
+        // Uncheck radios
+        let jobs = document.getElementsByName("job");
+        jobs.forEach((job) => (job.checked = false));
+
+        // Remove coloring
+        let inputs = ["Lname", "religion", "networth"];
+        inputs.forEach((id) => {
+          let field = document.getElementById(id);
+          field.classList.remove("correct");
+          field.classList.remove("incorrect");
+        });
+
+        // Clear feedback
+        document.getElementById("feedback").innerHTML = "";
+        document.getElementById("finalResult").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
