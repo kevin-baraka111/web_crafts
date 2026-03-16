@@ -6,23 +6,35 @@
     <title>Document</title>
   </head>
   <body>
+    length: <input type="number" id="l" /><br /><br />
+    width: <input type="number" id="w" /><br /><br />
+    height: <input type="number" id="h" /><br /><br />
+    <button onclick="CalculateVolume()">Calculate</button>
+    <hr />
+    <p id="results"></p>
+
     <script>
-      let l = 10;
-      let w = 20;
-      let h = 32;
-      let volume = l * w * h;
-      console.log(
-        "The volume is " + volume,
-        "when the height is " + h,
-        "the width is " + w,
-        "and length of " + l,
-      );
-      document.write(
+      function CalculateVolume() {
+        let l = document.getElementById("l").value;
+        let w = document.getElementById("w").value;
+        let h = document.getElementById("h").value;
+        let volume = l * w * h;
+        document.getElementById("results").innerHTML =
+          "The volume is: " + volume;
+      }
+
+      /* console.log(
+         "The volume is " + volume,
+         "when the height is " + h,
+         "the width is " + w,
+         "and length of " + l,
+       );*/
+      /*document.write(
         "The volume is: " + volume,
         "<br> when the height is " + h,
         ", the width is " + w,
         " and length is " + l,
-      );
+      );*/
     </script>
   </body>
 </html>
