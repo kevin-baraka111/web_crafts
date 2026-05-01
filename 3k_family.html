@@ -7,51 +7,55 @@
     <link rel="stylesheet" href="assets/css/mine.css" />
   </head>
   <body>
-    <h2><u>3K Family Generals Qualification</u></h2>
-    <form onsubmit="return checkQualification();">
-      <fieldset id="whole">
-        <legend>Personal Information:</legend>
-        <br />
-        Last Name:
-        <input type="text" id="Lname" placeholder="sir name" /><br /><br />
-        Religion:
-        <select id="religion">
-          <option value="Christian">Christian</option>
-          <option value="Hindu">Hindu</option>
-          <option value="Islam">Muslim</option>
-          <option value="Zoroastrian">Zoroastrian</option>
-          <option value="Buddhist">Buddhist</option></select
-        ><br /><br />
-        Networth:
-        <select id="networth">
-          <option value="2000000">2,000,000</option>
-          <option value="4000000">4,000,000</option>
-          <option value="6000000">6,000,000</option>
-          <option value="12000000">12,000,000</option>
-          <option value="20000000">20,000,000</option></select
-        ><br /><br />
-        Occupation Status:<br /><br />
-        <input type="radio" name="job" value="Working" />Working<br />
-        <input type="radio" name="job" value="Student" />Student<br />
-        <input type="radio" name="job" value="Both" />Both<br />
-        <input type="radio" name="job" value="Idle" />Idle<br />
+    <div id="you">
+      <h2><u>3K Family Generals Qualification</u></h2>
+      <form onsubmit="return checkQualification();">
+        <section id="whole">
+          <legend style="color: rgb(245, 231, 184)">
+            Personal Information:
+          </legend>
+          <br />
+          Last Name:
+          <input type="text" id="Lname" placeholder="Sur name" /><br /><br />
+          Religion:
+          <select id="religion">
+            <option value="Christian">Christian</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Islam">Muslim</option>
+            <option value="Zoroastrian">Zoroastrian</option>
+            <option value="Buddhist">Buddhist</option></select
+          ><br /><br />
+          Networth:
+          <select id="networth">
+            <option value="2000000">2,000,000</option>
+            <option value="4000000">4,000,000</option>
+            <option value="6000000">6,000,000</option>
+            <option value="12000000">12,000,000</option>
+            <option value="20000000">20,000,000</option></select
+          ><br /><br />
+          Occupation Status:<br /><br />
+          <input type="radio" name="job" value="Working" />Working<br />
+          <input type="radio" name="job" value="Student" />Student<br />
+          <input type="radio" name="job" value="Both" />Both<br />
+          <input type="radio" name="job" value="Idle" />Idle<br />
 
-        <br /><br />
-        Origin:
-        <select id="origin">
-          <option>Kenyan</option>
-          <option>American</option>
-          <option>Ethiopian</option>
-          <option>Rwandan</option>
-          <option>Emirati</option>
-          <option>Israeli</option>
-          <option>Egyptian</option>
-          <option>Tanzanian</option></select
-        ><br /><br /><br />
-        <button type="submit">submit</button>
-        <button type="button" onclick="resetForm()">Try Again</button>
-      </fieldset>
-    </form>
+          <br /><br />
+          Origin:
+          <select id="origin">
+            <option>Kenyan</option>
+            <option>American</option>
+            <option>Ethiopian</option>
+            <option>Rwandan</option>
+            <option>Emirati</option>
+            <option>Israeli</option>
+            <option>Egyptian</option>
+            <option>Tanzanian</option></select
+          ><br /><br /><br />
+          <button type="submit">Submit</button>
+          <button type="button" onclick="resetForm()">Try Again</button>
+        </section>
+      </form>
+    </div>
 
     <h3>Results:</h3>
     <ul id="feedback"></ul>
