@@ -1,4 +1,19 @@
 #whole{
-    background-image: url(../images/pattern2.jpg);
+    background-image: url(../images/pattern_image.jpg);
     font-weight: bolder;
+    color: goldenrod;
+    font-size: larger;
+    box-shadow: 4px 150px 5px (5, 5, 5, 0.35);
+        width: 30%;
+       padding-left: 1%;
+       margin: 1%;
+       
+}
+button{
+    background-color: aqua;
+    border-radius: 38%;
+}
+#you{
+    background-image: url(../images/pattern2.jpg);
+border-right-width: 40%;
 }
