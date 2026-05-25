@@ -1,0 +1,37 @@
+legend{
+    font-size: large;
+    font-weight: bold;
+    color: brown;
+}
+
+body{
+    font-family: Arial,sans-serif;
+    padding: 30px;
+   
+}
+select{
+    width: 280px;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    font-size: 13px;
+}
+fieldset{
+ 
+    font-weight: bold;
+    
+}
+button {
+    padding: 10px 15px;
+    background:  #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #5a67d8;
+}
+h1{
+    color: brown;
+}
