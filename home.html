@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCI, SRC</title>
+    <link rel="stylesheet" href="assets/css/home.css" />
+  </head>
+  <body>
+    <h1>CCI, Saints Restoration Centre - Ruai</h1>
+    <h2><u>Technical & Media Department</u></h2>
+
+    <form
+      action="https://formsubmit.co/kevinwisebaraka@gmail.com"
+      method="post"
+    >
+      <fieldset>
+        <legend>Personal Information</legend>
+        <br />
+        Name:
+        <input type="text" placeholder="Full Names" /><br /><br />
+        D.O.Birth:
+        <input type="month" /><br /><br />
+        Gender:<br /><br />
+        <input type="radio" name="gen" id="Male" />Male:<br />
+        <input type="radio" name="gen" id="Female" />Female:<br /><br />
+        Profile Photo:
+        <input type="file" />
+      </fieldset>
+      <br /><br />
+
+      <fieldset>
+        <legend>Contact Details</legend>
+        <br />
+        Phone Number:
+        <input type="text" placeholder="+254_ _ _ _ _ _ _ _ _" /><br /><br />
+        Email Address:
+        <input type="email" placeholder="______@gmail.com" /><br /><br />
+        Address:
+        <input type="text" placeholder="county,country" /><br /><br />
+        Next Of Kin:
+        <input type="text" /><br /><br />
+        Phone Number:
+        <input type="text" placeholder="+254_ _ _ _ _ _ _ _ _" />
+      </fieldset>
+      <br /><br />
+
+      <fieldset>
+        <legend>Service To Offer</legend>
+        <br />
+
+        Area Of Interest:
+        <select id="category" onchange="showServices()">
+          <option value="">-- Select Department --</option>
+          <option value="tech">Technical Department</option>
+          <option value="media">Media Department</option></select
+        ><br /><br />
+
+        Services:
+        <select multiple id="services">
+          <option value="">--Select Service--</option>
+        </select>
+        <br />
+        <p>
+          <mark>
+            Hold & Control to select multiple sevices in a department</mark
+          >
+        </p>
+        <br /><br />
+      </fieldset>
+      <br />
+
+      <button type="submit">Send</button>
+
+      <script>
+        alert("Welcome To SRC, Tech & Media");
+        function showServices() {
+          let category = document.getElementById("category").value;
+          let services = document.getElementById("services");
+
+          //clears old options
+          services.innerHTML = '<option value="">-- Select Service --</option>';
+
+          //Tech Options
+
+          if (category === "tech") {
+            let techServices = ["Sound", "System Setup"];
+
+            techServices.forEach(function (item) {
+              let option = document.createElement("option");
+              option.text = item;
+              option.value = item.toLowerCase();
+              services.appendChild(option);
+            });
+          }
+
+          //Media Options
+          else if (category === "media") {
+            let mediaServices = [
+              "Live Streaming",
+              "Projection",
+              "Photo Snapping",
+              "Photo Editing",
+            ];
+            mediaServices.forEach(function (item) {
+              let option = document.createElement("option");
+              option.text = item;
+              option.value = item.toLowerCase();
+              services.appendChild(option);
+            });
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>
